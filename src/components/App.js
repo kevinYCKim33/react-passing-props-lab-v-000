@@ -2,7 +2,6 @@ import React from 'react';
 
 import FruitBasket from './FruitBasket';
 
-// const App = () => <FruitBasket />;
 class App extends React.Component {
   constructor() {
     super();
@@ -35,12 +34,6 @@ class App extends React.Component {
     console.log('new filter: ', event.target.value);
     this.setState({ currentFilter: event.target.value });
   }
-
-  // const list = !this.state.currentFilter || this.state.currentFilter === 'all' ? this.state.fruit : this.state.fruit.filter(i => i.fruit_type === this.state.currentFilter);
-  // const list = !props.filter || props.filter === 'all' ? props.items : props.items.filter(i => i.fruit_type === props.filter);
-
-
-  // selectedFilter
 
   render() {
     return (
