@@ -48,7 +48,7 @@ class App extends React.Component {
         handleFilterChange={this.handleFilterChange}
         selectedFilter={this.state.currentFilter}
         filters={this.state.filters}
-        items={this.state.fruit}
+        fruit={this.state.fruit}
       />
     )
   }

@@ -11,7 +11,7 @@ const FruitBasket = (props) =>
       />
       <FilteredFruitList
         filter={props.selectedFilter}
-        items={props.items}
+        fruit={props.fruit}
       />
     </div>
 
