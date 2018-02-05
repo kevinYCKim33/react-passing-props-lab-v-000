@@ -1,6 +1,9 @@
 import React from 'react';
 
+// handleChange and filters are props that live inside <Filter /> Component
 const Filter = ({handleChange, filters}) =>
+    // when a filter gets changed, it calls the Filter's prop handleChange
+    // <Filter /> resides inside FruitBasket
     <select onChange={handleChange} defaultValue='all'>
       <option value='all'>All</option>
       {filters.map(filter =>
