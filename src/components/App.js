@@ -23,7 +23,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <FruitBasket handleFilterChange={this.handleFilterChange} selectedFilter={this.state.currentFilter}/>
+      <FruitBasket
+        handleFilterChange={this.handleFilterChange}
+        selectedFilter={this.state.currentFilter}
+      />
     )
   }
 }
