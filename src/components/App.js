@@ -14,6 +14,16 @@ class App extends React.Component {
     }
   }
 
+  componentWillMount() {
+    this.fetchFilters();
+  }
+
+  fetchFilters = () => {
+    fetch('/api/fruit_types')
+      .then(response => response.json())
+      .then(filters => this.setState({ filters }));
+  }
+
   handleFilterChange = event => {
     console.log('new filter: ', event.target.value);
     this.setState({ currentFilter: event.target.value });
@@ -26,6 +36,7 @@ class App extends React.Component {
       <FruitBasket
         handleFilterChange={this.handleFilterChange}
         selectedFilter={this.state.currentFilter}
+        filters={this.state.filters}
       />
     )
   }
