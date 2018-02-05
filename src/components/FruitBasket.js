@@ -56,10 +56,10 @@ export default FruitBasket;
 //     return (
 //       <div className="fruit-basket">
 //         <Filter
-//           handleChange={this.props.handleFilterChange}
+//           handleChange={this.state.handleFilterChange}
 //         />
 //         <FilteredFruitList
-//           filter={this.props.selectedFilter}
+//           filter={this.state.selectedFilter}
 //         />
 //       </div>
 //     );
