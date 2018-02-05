@@ -18,6 +18,13 @@ class App extends React.Component {
     this.fetchFilters();
   }
 
+  componentDidMount() {
+    fetch('/api/fruit')
+      .then(response => response.json())
+      .then(fruit => this.setState({ fruit }));
+      //feel like this should say fruitS but for purpose of passing tests...
+  }
+
   fetchFilters = () => {
     fetch('/api/fruit_types')
       .then(response => response.json())
@@ -29,6 +36,10 @@ class App extends React.Component {
     this.setState({ currentFilter: event.target.value });
   }
 
+  // const list = !this.state.currentFilter || this.state.currentFilter === 'all' ? this.state.fruit : this.state.fruit.filter(i => i.fruit_type === this.state.currentFilter);
+  // const list = !props.filter || props.filter === 'all' ? props.items : props.items.filter(i => i.fruit_type === props.filter);
+
+
   // selectedFilter
 
   render() {
@@ -37,6 +48,7 @@ class App extends React.Component {
         handleFilterChange={this.handleFilterChange}
         selectedFilter={this.state.currentFilter}
         filters={this.state.filters}
+        items={this.state.fruit}
       />
     )
   }
