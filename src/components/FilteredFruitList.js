@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 
-const FilteredFruitList = (props) => {
-  const list = !props.filter || props.filter === 'all' ? props.fruit : props.fruit.filter(i => i.fruit_type === props.filter);
+// ALTERNATE START TO LINE 8
+// FilteredFruitList = (props) => {}
+// props.filter, props.fruit
+// or pass in specific props directly like below
+
+const FilteredFruitList = ({filter, fruit}) => {
+  const list = !filter || filter === 'all' ? fruit : fruit.filter(i => i.fruit_type === filter);
   return (
     <ul className="fruit-list">
       {list.map((item, index) => <li key={index}>{item.char}</li>)}
@@ -13,6 +18,7 @@ FilteredFruitList.defaultProps = {
   filter: null,
   fruit: []
 }
+
 export default FilteredFruitList;
 
 

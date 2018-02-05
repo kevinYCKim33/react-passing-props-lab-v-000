@@ -14,10 +14,11 @@ class App extends React.Component {
   }
 
   componentWillMount() {
+    this.fetchFruits();
     this.fetchFilters();
   }
 
-  componentDidMount() {
+  fetchFruits() {
     fetch('/api/fruit')
       .then(response => response.json())
       .then(fruit => this.setState({ fruit }));
@@ -30,7 +31,7 @@ class App extends React.Component {
       .then(filters => this.setState({ filters }));
   }
 
-  handleFilterChange = event => {
+  updateFilterCallback = event => {
     console.log('new filter: ', event.target.value);
     this.setState({ currentFilter: event.target.value });
   }
@@ -38,8 +39,8 @@ class App extends React.Component {
   render() {
     return (
       <FruitBasket
-        handleFilterChange={this.handleFilterChange}
-        selectedFilter={this.state.currentFilter}
+        updateFilterCallback={this.updateFilterCallback}
+        currentFilter={this.state.currentFilter}
         filters={this.state.filters}
         fruit={this.state.fruit}
       />
